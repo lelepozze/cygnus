@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/shiftkey/desktop"
 SRC_URI="https://github.com/shiftkey/desktop/releases/download/release-${PV%_rc*}-${CUSTOMNAME}${PV#*_rc}/GitHubDesktop-${CUSTOMNAME}-x86_64-${PV%_rc*}-linux${PV#*_rc}.rpm -> ${P}.rpm"
 S="${WORKDIR}"
 
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 # Electron bundles a bunch of things
 LICENSE="
 	MIT BSD BSD-2 BSD-4 AFL-2.1 Apache-2.0 Ms-PL GPL-2 LGPL-2.1 APSL-2
