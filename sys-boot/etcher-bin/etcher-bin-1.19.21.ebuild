@@ -15,13 +15,12 @@ S="${WORKDIR}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-
+IUSE="notifications"
 RESTRICT="mirror"
 
 RDEPEND="
 	app-arch/lzma
 	dev-libs/expat
-	dev-libs/libappindicator
 	dev-libs/nss
 	media-libs/fontconfig
 	media-libs/freetype
@@ -40,7 +39,7 @@ RDEPEND="
 	x11-libs/libXfixes
 	x11-libs/libXrender
 	x11-libs/libXtst
-	x11-libs/libnotify
+	notifications? ( x11-libs/libnotify )
 "
 
 QA_PREBUILT="
