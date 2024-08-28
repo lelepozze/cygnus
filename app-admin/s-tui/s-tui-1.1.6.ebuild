@@ -3,9 +3,21 @@
 
 EAPI=8
 
-DESCRIPTION="Terminal UI stress test and monitoring tool"
-HOMEPAGE="https://github.com/amanusk/s-tui"
-SRC_URI="https://github.com/amanusk/s-tui/archive/v${PV}.tar.gz"
+PYTHON_COMPAT=( python3_{10..12} )
+DISTUTILS_USE_PEP517=setuptools
+inherit distutils-r1 optfeature
+
+DESCRIPTION="Stress-Terminal UI monitoring tool"
+HOMEPAGE="https://amanusk.github.io/s-tui/"
+
+if [[ ${PV} == *9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/amanusk/${PN}.git"
+	EGIT_SUBMODULES=()
+else
+	SRC_URI="https://github.com/amanusk/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+	KEYWORDS="~amd64"
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -13,18 +25,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="stress"
 
 RDEPEND=">=dev-lang/python-3
-    dev-python/urwid
-    dev-python/psutil
-    dev-python/setuptools
-    stress? ( app-benchmarks/stress )"
-DEPEND="${RDEPEND}"
+    >=dev-python/psutil-5.9.1[${PYTHON_USEDEP}]
+    >=dev-python/urwid-2.0.1[${PYTHON_USEDEP}]
+    stress? ( app-benchmarks/stress )
+"
 
-src_prepare() {
-    eapply_user
-    cd "${WORKDIR}/${PN}-${PR}"
-    rm Makefile
-}
+distutils_enable_tests unittest
 
-src_install() {
-    python setup.py install --root="${D}" --optimize=1
+pkg_postinst() {
+	optfeature "Stress options in program menu" app-benchmarks/stress
 }
