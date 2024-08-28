@@ -11,9 +11,10 @@ CHROMIUM_LANGS="
 
 inherit chromium-2 desktop rpm xdg
 
+CUSTOMNAME="linux"
 DESCRIPTION="Linux fork of GitHub Desktop"
 HOMEPAGE="https://github.com/shiftkey/desktop"
-SRC_URI="https://github.com/shiftkey/desktop/releases/download/release-${PV%_rc*}-linux${PV#*_rc}/GitHubDesktop-linux-x86_64-${PV%_rc*}-linux${PV#*_rc}.rpm -> ${P}.rpm"
+SRC_URI="https://github.com/shiftkey/desktop/releases/download/release-${PV%_rc*}-${CUSTOMNAME}${PV#*_rc}/GitHubDesktop-${CUSTOMNAME}-x86_64-${PV%_rc*}-linux${PV#*_rc}.rpm -> ${P}.rpm"
 S="${WORKDIR}"
 
 KEYWORDS="-* ~amd64"
