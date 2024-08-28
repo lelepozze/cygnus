@@ -18,6 +18,8 @@ KEYWORDS="~amd64"
 IUSE="notifications"
 RESTRICT="mirror"
 
+#x11-apps/xrandr
+
 RDEPEND="
 	app-arch/lzma
 	dev-libs/expat
@@ -27,7 +29,7 @@ RDEPEND="
 	net-print/cups
 	sys-apps/dbus
 	sys-auth/polkit
-	x11-apps/xrandr
+
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf
 	x11-libs/gtk+
