@@ -4,7 +4,7 @@ Daniele Pozzebon's personal Gentoo Linux overlay.
 
 ## Installing
 
-Edit the /etc/portage/repos.conf/eselect-repo.conf file with
+Edit the /etc/portage/repos.conf/custom.conf file with
 
 ```
 [cygnus]
