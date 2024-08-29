@@ -14,8 +14,10 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="sys-boot/plymouth"
 
-#S="${WORKDIR}/plymouth"
+S="${WORKDIR}"
 
 src_install() {
 	insinto /usr/share/plymouth/themes
+	doins -r spinfinity-gentoo 
+	doins -r spinner-gentoo
 }
