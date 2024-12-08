@@ -4,9 +4,9 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{10..13} )
-DISTUTILS_USE_PEP517=setuptools
+#DISTUTILS_USE_PEP517=setuptools
 
-inherit distutils-r1
+#inherit distutils-r1
 
 DESCRIPTION="Python script to connect to WiFi eduroam from 'University of Padua'."
 HOMEPAGE="https://cat.eduroam.org/"
