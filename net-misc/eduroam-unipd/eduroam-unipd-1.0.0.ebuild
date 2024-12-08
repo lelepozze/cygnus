@@ -11,6 +11,7 @@ inherit distutils-r1
 DESCRIPTION="Python script to connect to WiFi eduroam from 'University of Padua'."
 HOMEPAGE="https://cat.eduroam.org/"
 SRC_URI="https://cat.eduroam.org/user/API.php?action=downloadInstaller&lang=it&profile=9199&device=linux&generatedfor=user&openroaming=0 -> ${PN}.py"
+S="${DISTDIR}"
 
 LICENSE="GPL-3.0"
 SLOT="0"
