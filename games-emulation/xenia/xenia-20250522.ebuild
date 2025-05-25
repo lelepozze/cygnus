@@ -23,7 +23,6 @@ DEPEND="app-arch/snappy
 	dev-libs/libfmt:=
 	dev-libs/pugixml
 	dev-libs/rapidjson
-	dev-libs/tabulate
 	dev-libs/utfcpp
 	dev-libs/vulkan-memory-allocator
 	dev-libs/xbyak
