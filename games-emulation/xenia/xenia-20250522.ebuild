@@ -22,7 +22,6 @@ DEPEND="app-arch/snappy
 	dev-libs/date
 	dev-libs/libfmt:=
 	dev-libs/pugixml
-	dev-libs/rapidcsv
 	dev-libs/rapidjson
 	dev-libs/tabulate
 	dev-libs/utfcpp
