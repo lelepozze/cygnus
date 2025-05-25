@@ -20,7 +20,6 @@ DEPEND="app-arch/snappy
 	dev-libs/capstone
 	dev-libs/cxxopts
 	dev-libs/date
-	dev-libs/disruptorplus
 	dev-libs/libfmt:=
 	dev-libs/pugixml
 	dev-libs/rapidcsv
