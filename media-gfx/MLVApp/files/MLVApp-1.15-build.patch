@@ -1,0 +1,11 @@
+--- a/src/dng/dng.c
++++ b/src/dng/dng.c
+@@ -488,7 +488,7 @@
+     int res = 0;
+ 
+     char *p = strstr(props_buffer, key);
+-    char *d = value;
++    int *d = value;
+ 
+     int len = 0;
+
