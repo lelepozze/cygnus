@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit qmake-utils
+inherit qmake-utils desktop
 
 DESCRIPTION="All in one MagicLantern videos (MLV) processing app"
 HOMEPAGE="https://github.com/ilia3101/MLV-App"
@@ -15,14 +15,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-build.patch
-	"${FILESDIR}"/${P}-makefile.patch
+	"${FILESDIR}"/${P}-build.patch	
 )
+
 
 # Instead of using the embedded programs (e.g. ffmpeg and raw2mlv), it's better
 # to create two run dependencies and to compile them separately.
-
-
 RDEPEND="
 	dev-qt/qtbase
 	dev-qt/qtmultimedia:5
@@ -45,16 +43,18 @@ src_unpack() {
 
 src_prepare() {
 	default
-	eqmake5 ${S}/platform/qt/MLVApp.pro
 }
 
 
 src_compile() {
+	eqmake5 ${S}/platform/qt/MLVApp.pro
 	emake
 }
 
 src_install() {
-	dobin mlvapp		
+	dobin mlvapp
+	domenu ${S}/platform/qt/mlvapp.desktop
+	newicon -s 512x512 ${S}/src/icon/icon.png MLVAPP.png
 }
 
 
