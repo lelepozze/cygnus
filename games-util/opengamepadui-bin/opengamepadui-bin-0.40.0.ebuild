@@ -11,7 +11,7 @@ SRC_URI="https://github.com/ShadowBlip/OpenGamepadUI/releases/download/v${PV}/op
 RESTRICT="mirror strip"
 
 LICENSE="GPL-3"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 TEMPLATES_ARCH="x86_64"
 
 SLOT="0"
