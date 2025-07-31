@@ -29,7 +29,7 @@ RDEPEND="
 	net-print/cups
 	sys-apps/dbus
 	sys-auth/polkit
-
+	sys-fs/fuse:0
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf
 	x11-libs/gtk+
