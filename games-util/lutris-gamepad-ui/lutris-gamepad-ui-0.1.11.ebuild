@@ -47,10 +47,7 @@ src_install() {
 	local DESTDIR="/opt/lutris-gamepad-ui"
 
 	exeinto "${DESTDIR}"
-	doexe ${BUILD_FOLDER}/chrome-sandbox ${BUILD_FOLDER}/chrome_crashpad_handler ${BUILD_FOLDER}/*.so ${BUILD_FOLDER}/*.so.1 ${BUILD_FOLDER}/lutris-gamepad-ui
-
-	into "${DESTDIR}"
-	dobin ${BUILD_FOLDER}/*.pak ${BUILD_FOLDER}/*.dat  ${BUILD_FOLDER}/*.txt ${BUILD_FOLDER}/*.html ${BUILD_FOLDER}/*.bin ${BUILD_FOLDER}/*.json
+	doexe ${BUILD_FOLDER}/chrome-sandbox ${BUILD_FOLDER}/chrome_crashpad_handler ${BUILD_FOLDER}/*.so ${BUILD_FOLDER}/*.so.1 ${BUILD_FOLDER}/lutris-gamepad-ui ${BUILD_FOLDER}/*.pak ${BUILD_FOLDER}/*.dat  ${BUILD_FOLDER}/*.txt ${BUILD_FOLDER}/*.html ${BUILD_FOLDER}/*.bin ${BUILD_FOLDER}/*.json
 	insinto "${DESTDIR}"
 	insopts -m0755
 	doins -r ${BUILD_FOLDER}/locales ${BUILD_FOLDER}/resources
