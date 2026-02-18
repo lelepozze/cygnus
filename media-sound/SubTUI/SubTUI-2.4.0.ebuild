@@ -3,12 +3,14 @@
 
 EAPI=8
 
-#inherit golang-base
+inherit go-module
 
 DESCRIPTION="A lightweight Subsonic TUI music player built in Go with scrobbling support."
 HOMEPAGE="https://github.com/MattiaPun/SubTUI"
 SRC_URI="https://github.com/MattiaPun/SubTUI/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/SubTUI-${PV}"
+
+RESTRICT="network-sandbox"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,18 +22,18 @@ RDEPEND="
 
 src_unpack() {
 	unpack ${P}.tar.gz
+	go-module_live_vendor
 }
 
-src_prepare() {
-	default
-}
+#src_prepare() {
+#	default
+#}
 
 src_compile() {
-    cd ${S}
-	go build .
+	ego build .
 }
 
-#src_install() {
-#    dobin SubTUI
-#}
+src_install() {
+    dobin subtui
+}
 
