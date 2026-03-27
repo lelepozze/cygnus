@@ -14,6 +14,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
+RESTRICT="network-sandbox"
+
 #RDEPEND="
 #
 #"
@@ -21,6 +23,7 @@ KEYWORDS="~amd64"
 BDEPEND="
 	net-libs/nodejs[npm]
 	sys-fs/squashfs-tools[zstd]
+	x11-misc/appmenu-gtk-module[gtk2,wayland]
 "
 
 src_unpack() {
