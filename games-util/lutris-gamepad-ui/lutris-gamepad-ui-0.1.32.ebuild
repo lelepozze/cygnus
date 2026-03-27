@@ -44,7 +44,7 @@ src_compile() {
 src_install() {
 	newicon ${S}/src_frontend/resources/icon.svg lutris-gamepad-ui.svg
 	
-	make_desktop_entry "/opt/bin/lutris-gamepad-ui --gtk-version=3" "Lutris Gamepad UI" "/usr/share/pixmaps/lutris-gamepad-ui.svg" Game
+	make_desktop_entry "/opt/bin/lutris-gamepad-ui --ozone-platform=x11" "Lutris Gamepad UI" "/usr/share/pixmaps/lutris-gamepad-ui.svg" Game
 	
 	local DESTDIR="/opt/lutris-gamepad-ui"
 
