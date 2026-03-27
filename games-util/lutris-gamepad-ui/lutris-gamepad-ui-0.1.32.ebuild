@@ -14,8 +14,6 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RESTRICT="network-sandbox"
-
 #RDEPEND="
 #
 #"
@@ -30,13 +28,16 @@ src_unpack() {
 }
 
 src_prepare() {
-	npm i
-	npm audit fix
 	default
 }
 
-src_compile() {
+src_configure() {
+	npm i
+	npm audit fix
 
+}
+
+src_compile() {
 	npm run build
 }
 
