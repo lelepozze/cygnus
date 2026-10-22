@@ -42,7 +42,8 @@ src_compile() {
 }
 
 src_install() {
-    cargo_src_install --path ${S}/target/release/vv-app
+    dobin ${S}/target/release/vv-app
+    # cargo_src_install --path ${S}/target/release/vv-app
     make_desktop_entry --eapi9 "vv-app %f" -n "Venturi" -c "AudioVideo;Video;AudioVideoEditing" -C "Video editor" -i "venturi-video" -d "venturi" -e "Terminal=false" -e "MimeType=application/x-venturi-project;"
     for size in {16,24,32,48,64,128,256,512}; do
         doicon -s ${size} ${S}/media/icons/linux/hicolor/${size}x${size}/apps/venturi-video.png
