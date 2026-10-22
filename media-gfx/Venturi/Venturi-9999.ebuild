@@ -11,6 +11,7 @@ DESCRIPTION="Linux-first, performance oriented minimal video editor"
 HOMEPAGE="https://venturivideo.github.io/Venturi/"
 if [[ ${PV} != *9999* ]]; then
     SRC_URI="https://github.com/VenturiVideo/Venturi/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+    KEYWORDS="~amd64 ~arm64"
 else
     EGIT_REPO_URI="https://github.com/VenturiVideo/Venturi.git"
 fi
@@ -18,7 +19,7 @@ S="${WORKDIR}/${P}"
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64"
+
 
 # Maybe it's not needed, but for now I use RESTRICT=network-sandbox.
 # RESTRICT="network-sandbox"
