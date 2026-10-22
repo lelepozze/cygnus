@@ -52,7 +52,7 @@ src_unpack() {
 src_configure() {
     export RUSTUP_TOOLCHAIN=stable
     export CARGO_TARGET_DIR=target
-    cargo_src_configure -p vv-app --release --frozen
+    cargo_src_configure -p vv-app --release
 }
 
 src_compile() {
