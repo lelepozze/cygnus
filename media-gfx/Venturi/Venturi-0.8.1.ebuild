@@ -589,7 +589,7 @@ src_unpack() {
 }
 
 src_configure() {
-    cargo_src_configure -p vv-app --release --frozen
+    cargo_src_configure -p vv-app --frozen
 }
 
 src_compile() {
