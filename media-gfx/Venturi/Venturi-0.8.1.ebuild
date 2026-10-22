@@ -585,7 +585,7 @@ BDEPEND="
 
 src_unpack() {
     unpack ${P}.tar.gz
-
+	cargo_src_unpack
 }
 
 src_configure() {
