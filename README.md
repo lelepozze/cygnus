@@ -29,3 +29,17 @@ sudo PORTDIR_OVERLAY="/var/db/repos/cygnus" GENTOO_MIRRORS="" ebuild ./xxxxxx-n.
 ```
 
 And if you modify the .ebuild file, you must re-run this command
+
+If you are using app-portage/pycargoebuild for create a list of crates for
+rust packages, you must assure that inside the Cargo.toml there is a section present, like this one
+
+```
+[package]
+name = "package-name"
+version = "package-version"
+```
+
+that are used for create the ebuild file.
+
+If you want, you can use it to create only the list of the crates to insert into the ebuild, using the -C flag.
+
