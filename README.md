@@ -41,5 +41,9 @@ version = "package-version"
 
 that are used for create the ebuild file.
 
-If you want, you can use it to create only the list of the crates to insert into the ebuild, using the -C flag.
+If you want, you can use it to create only the list of the crates to insert into the ebuild, using the -C flag. The syntax is
+```
+pycargoebuild . -C -d . -o name.ebuild
+```
+
 

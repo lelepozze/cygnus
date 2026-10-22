@@ -520,6 +520,7 @@ CRATES="
 	rmcp@3.5.0
 	ron@0.12.2
 	roxmltree@0.20.0
+	roxmltree@0.21.1
 	rustc-hash@1.1.0
 	rustc-hash@2.1.3
 	rustc_version@0.4.1
@@ -776,6 +777,7 @@ CRATES="
 	xml@1.4.0
 	xmlwriter@0.1.0
 	y4m@0.8.0
+	yeslogic-fontconfig-sys@6.0.1
 	yoke-derive@0.8.3
 	yoke@0.8.3
 	zbus-lockstep-macros@0.5.2
