@@ -18,23 +18,19 @@ PATCHES=(
 	"${FILESDIR}"/${P}-build.patch	
 )
 
-
 # Instead of using the embedded programs (e.g. ffmpeg and raw2mlv), it's better
 # to create two run dependencies and to compile them separately.
 RDEPEND="
-	dev-qt/qtbase
-	dev-qt/qtmultimedia:5
-	dev-qt/qtcore:5
-	dev-qt/qtopengl
 	media-video/ffmpeg
 	media-gfx/raw2mlv
+	sys-fs/fuse
+	x11-libs/libxkbcommon
 "
 BDEPEND="
-	dev-libs/appstream
-	x11-libs/libxkbcommon
-	sys-fs/fuse
+	dev-qt/qtbase:5
+	dev-qt/qtmultimedia:5
 	dev-qt/qtsvg
-	dev-qt/designer
+	dev-libs/appstream
 "
 
 src_unpack() {
@@ -45,9 +41,11 @@ src_prepare() {
 	default
 }
 
+src_configure() {
+	eqmake5 ${S}/platform/qt/MLVApp.pro
+}
 
 src_compile() {
-	eqmake5 ${S}/platform/qt/MLVApp.pro
 	emake
 }
 
@@ -56,6 +54,3 @@ src_install() {
 	domenu ${S}/platform/qt/mlvapp.desktop
 	newicon -s 512x512 ${S}/src/icon/icon.png MLVAPP.png
 }
-
-
-
