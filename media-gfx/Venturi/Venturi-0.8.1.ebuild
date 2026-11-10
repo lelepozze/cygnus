@@ -564,7 +564,6 @@ SRC_URI="
     https://github.com/VenturiVideo/Venturi/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
     ${CARGO_CRATE_URIS}
 "
-S="${WORKDIR}/${P}"
 
 KEYWORDS="~amd64 ~arm64"
 LICENSE="GPL-3.0"
@@ -585,7 +584,7 @@ BDEPEND="
 
 src_unpack() {
     unpack ${P}.tar.gz
-	cargo_src_unpack
+    cargo_src_unpack
 }
 
 src_configure() {
@@ -597,7 +596,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${S}/target/release/vv-app
+    dobin ${S}/target/release/vv-app
     # cargo_src_install --path ${S}/target/release/vv-app
     make_desktop_entry --eapi9 "vv-app %f" -n "Venturi" -c "AudioVideo;Video;AudioVideoEditing" -C "Video editor" -i "venturi-video" -d "venturi" -e "Terminal=false" -e "MimeType=application/x-venturi-project;"
     for size in {16,24,32,48,64,128,256,512}; do
